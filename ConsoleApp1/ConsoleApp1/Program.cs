@@ -9,7 +9,7 @@ namespace Programmering
 
             Random Talet = new Random();
             int talet = Talet.Next(100);
-
+            int gissningar = 0;
             Boolean vunnit = false;
 
             while (vunnit == false)
@@ -18,11 +18,12 @@ namespace Programmering
                 string Gissning = Console.ReadLine();
                 int.TryParse(Gissning, out int gissning);
 
-
+                gissningar ++ ;
                 if (gissning == talet)
                 {
                     vunnit = true;
                     Console.WriteLine("Rätt");
+                    Console.WriteLine("Antal gissningar: "+ gissningar);
                 }
 
                 else if (gissning > talet)
